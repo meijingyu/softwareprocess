@@ -86,10 +86,12 @@ class TCurve(object):
             while (a <=s) :
                 Sim= Sim+4.0*f((a-1)*w,n)
                 a=a+2
+                Sim= float(Sim)
             a=3
             while (a <=s-1):
                 Sim=Sim+2.0*f((a-1)*w,n)
                 a=a+2
+                Sim= float(Sim)
             Sim =Sim+f(s*w,n)
             simpsonNew = W * Sim
             s=s*2 
