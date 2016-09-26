@@ -81,7 +81,7 @@ class TCurve(object):
         while (abs((simpsonNew - simpsonOld ) / simpsonNew) > epsilon):
             simpsonOld = simpsonNew
             w = (highBound - lowBound) / s
-            W= w/3.0
+            W = w/3.0
             a=2
             while (a <=s) :
                 Sim= Sim+4.0*f((a-1)*w,n)
