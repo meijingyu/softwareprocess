@@ -1,2 +1,0 @@
-LOG:	2016-11-12 02:33:16	Log file:/Users/apple/Documents/project/softwareprocess/test/test/log553e96189659.txt
-LOG:	2016-11-12 02:33:16	Sighting file:/Users/apple/Documents/project/softwareprocess/test/test/CA02_300_InvalidTime.xml

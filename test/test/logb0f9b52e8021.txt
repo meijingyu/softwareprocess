@@ -1,3 +1,0 @@
-LOG:	2016-11-12 02:33:16	Log file:/Users/apple/Documents/project/softwareprocess/test/test/logb0f9b52e8021.txt
-LOG:	2016-11-12 02:33:16	Sighting file:/Users/apple/Documents/project/softwareprocess/test/test/CA03_300_ValidStarLatLon.xml
-LOG:	2016-11-12 02:33:16	Sabik	2017-01-01	03:00:00	9d54.7	0d0.0	0d0.0
