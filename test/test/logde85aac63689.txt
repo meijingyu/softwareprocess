@@ -1,4 +1,0 @@
-LOG:	2016-11-12 23:42:02	Log file:/Users/apple/Documents/project/softwareprocess/test/test/logde85aac63689.txt
-LOG:	2016-11-12 23:42:02	sSighting file:	/Users/apple/Documents/project/softwareprocess/test/test/CA03_300_ValidStarLatLonInterpolationRequired.xml
-LOG:	2016-11-12 23:42:02	Betelgeuse	2017-01-16	03:15:42	9d54.7	7d24.3	70d59.0
-LOG:	2016-11-12 23:42:02	Sighting errors:	0

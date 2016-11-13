@@ -26,10 +26,13 @@ class Angle():
                   
     def setDegreesAndMinutes(self, degrees):
         if(isinstance(degrees,basestring)):
+
             try:
                 degreeslist = degrees.split('d')
             except:
                 raise ValueError('Angle.setDegreesAndMinutes:')
+
+
             if (len(degreeslist)== 2):
                 D = degreeslist[0]
                 M = degreeslist[1]

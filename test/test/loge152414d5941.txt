@@ -1,2 +1,0 @@
-LOG:	2016-11-12 23:57:38	Log file:/Users/apple/Documents/project/softwareprocess/test/test/loge152414d5941.txt
-LOG:	2016-11-12 23:57:38	sSighting file:	/Users/apple/Documents/project/softwareprocess/test/test/CA02_300_ValidOneStarArtificialHorizon.xml

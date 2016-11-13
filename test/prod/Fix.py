@@ -391,9 +391,6 @@ class Fix(object):
                     if a == 0:
                         ariesline_data1 = {'date': ariesFilelist[0],'hour': ariesFilelist[1],'gha': ariesFilelist[2]}
                         a=a+1
-            
-            
-            
             if a == 0:
                 return False
                 
