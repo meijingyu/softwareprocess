@@ -1,0 +1,7 @@
+LOG:	2016-10-30 23:11:56	logFile:/Users/apple/Documents/project/softwareprocess/test/test/log.txt
+LOG:	2016-10-30 23:11:56	Sighting file: /Users/apple/Documents/project/softwareprocess/test/test/sightingFile.xml
+LOG:	2016-10-30 23:11:56	Aries File:/Users/apple/Documents/project/softwareprocess/test/test/aries.txt
+LOG:	2016-10-30 23:11:56	starFile:/Users/apple/Documents/project/softwareprocess/test/test/stars.txt
+LOG:	2016-10-30 23:11:56	Pollux	2017-04-17	10:30:30	120d11.8	280d51.0	357d41.7
+LOG:	2016-10-30 23:11:56	Sirius	2017-04-17	09:30:30	45d12.0	130d26.0	357d41.7
+LOG:	2016-10-30 23:11:56	Sighting error:	0
