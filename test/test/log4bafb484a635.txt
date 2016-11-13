@@ -1,0 +1,2 @@
+LOG:	2016-11-13 00:09:15	Log file:/Users/apple/Documents/project/softwareprocess/test/test/log4bafb484a635.txt
+LOG:	2016-11-13 00:09:15	sSighting file:	/Users/apple/Documents/project/softwareprocess/test/test/CA02_300_ValidOneStarWithDefaultValues.xml

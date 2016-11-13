@@ -1,0 +1,2 @@
+LOG:	2016-11-12 23:58:54	Log file:/Users/apple/Documents/project/softwareprocess/test/test/loge5ab79f1209b.txt
+LOG:	2016-11-12 23:58:54	sSighting file:	/Users/apple/Documents/project/softwareprocess/test/test/CA02_300_ValidMultipleStarSighting.xml

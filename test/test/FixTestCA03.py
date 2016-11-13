@@ -217,7 +217,7 @@ class TestFix(unittest.TestCase):
         testFile = self.mapFileToTest("validStarSightingFile")
         theFix = F.Fix()
         try:
-            result = theFix.setSightingFile(sightingfile = testFile)
+            result = theFix.setSightingFile(sightingFile = testFile)
         except Exception as e:
             self.fail("Minor: " + str(e))
         self.assertNotEquals(-1, result.find(testFile), 

@@ -1,0 +1,2 @@
+LOG:	2016-11-12 23:25:43	Log file:/Users/apple/Documents/project/softwareprocess/test/test/logc9c24b4282f0.txt
+LOG:	2016-11-12 23:25:43	sSighting file:	/Users/apple/Documents/project/softwareprocess/test/test/CA03_300_ValidStarLatLon.xml

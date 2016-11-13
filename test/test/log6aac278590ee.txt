@@ -1,0 +1,2 @@
+LOG:	2016-11-12 23:08:22	Log file:/Users/apple/Documents/project/softwareprocess/test/test/log6aac278590ee.txt
+LOG:	2016-11-12 23:08:22	sSighting file:	/Users/apple/Documents/project/softwareprocess/test/test/CA02_300_ValidWithExtraneousTags.xml

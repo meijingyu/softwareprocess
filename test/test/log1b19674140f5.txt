@@ -1,0 +1,2 @@
+LOG:	2016-11-12 23:08:23	Log file:/Users/apple/Documents/project/softwareprocess/test/test/log1b19674140f5.txt
+LOG:	2016-11-12 23:08:23	sSighting file:	/Users/apple/Documents/project/softwareprocess/test/test/CA02_300_ValidOneStarNaturalHorizon.xml

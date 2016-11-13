@@ -1,0 +1,2 @@
+LOG:	2016-11-12 23:29:16	Log file:/Users/apple/Documents/project/softwareprocess/test/test/log2e73d3dba03e.txt
+LOG:	2016-11-12 23:29:16	sSighting file:	/Users/apple/Documents/project/softwareprocess/test/test/CA03_300_ValidStarLatLonInterpolationRequired.xml

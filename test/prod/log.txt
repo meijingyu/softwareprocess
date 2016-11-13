@@ -1,0 +1,8 @@
+LOG:	2016-11-12 22:28:02	Log file:/Users/apple/Documents/project/softwareprocess/test/prod/log.txt
+LOG:	2016-11-12 22:28:02	Star File:/Users/apple/Documents/project/softwareprocess/test/prod/CA03_Valid_Stars.txt
+LOG:	2016-11-12 22:28:02	Log file:/Users/apple/Documents/project/softwareprocess/test/prod/log.txt
+LOG:	2016-11-12 22:28:02	Star File:/Users/apple/Documents/project/softwareprocess/test/prod/CA03_Valid_Stars.txt
+LOG:	2016-11-12 23:15:15	Log file:/Users/apple/Documents/project/softwareprocess/test/prod/log.txt
+LOG:	2016-11-12 23:15:15	Star file:/Users/apple/Documents/project/softwareprocess/test/prod/CA03_Valid_Stars.txt
+LOG:	2016-11-12 23:25:35	Log file:/Users/apple/Documents/project/softwareprocess/test/prod/log.txt
+LOG:	2016-11-12 23:25:35	Star file:/Users/apple/Documents/project/softwareprocess/test/prod/CA03_Valid_Stars.txt

@@ -9,7 +9,7 @@ class Angle():
         if(isinstance(degrees, float)) or (isinstance(degrees, int)):
             degrees = round( degrees * 60.0, 1) / 60.0
             if degrees > -360 and degrees < 0:
-                degrees = degrees + 360            
+                degrees = degrees + 360    
             elif degrees >=0 and degrees < 360:
                 degrees = degrees 
             elif degrees <= -360:
@@ -26,7 +26,10 @@ class Angle():
                   
     def setDegreesAndMinutes(self, degrees):
         if(isinstance(degrees,basestring)):
-            degreeslist = degrees.split('d')
+            try:
+                degreeslist = degrees.split('d')
+            except:
+                raise ValueError('Angle.setDegreesAndMinutes:')
             if (len(degreeslist)== 2):
                 D = degreeslist[0]
                 M = degreeslist[1]
@@ -68,11 +71,8 @@ class Angle():
                             raise ValueError('Angle.setDegreesAndMinutes:')
                     else:
                         raise ValueError('Angle.setDegreesAndMinutes:')
-                else:
-                    raise ValueError('Angle.setDegreesAndMinutes:')
             else:
                 raise ValueError('Angle.setDegreesAndMinutes:')
-            
         else:
             raise ValueError('Angle.setDegreesAndMinutes:')       
             
@@ -88,7 +88,6 @@ class Angle():
                                             
         
         
-    
     def subtract(self, angle=0):
         if isinstance(angle,Angle):
             self.degrees = self.degrees - angle.degrees
@@ -97,8 +96,6 @@ class Angle():
         else:
             raise ValueError('Angle.subtract:')
                                             
-
-    
     def compare(self, angle=0):
         if isinstance(angle,Angle):
             angle.degrees = angle.degrees
@@ -121,4 +118,3 @@ class Angle():
         
     def getDegrees(self):
         return self.degrees
-        
