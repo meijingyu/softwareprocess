@@ -1,0 +1,5 @@
+LOG:	2016-12-02 22:19:28	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/loga6f7b37d692f.txt
+LOG:	2016-12-02 22:19:28	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_300_ValidStarLatLon.xml
+LOG:	2016-12-02 22:19:28	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
+LOG:	2016-12-02 22:19:28	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
+LOG:	2016-12-02 22:19:28	Sabik	2017-01-01	03:00:00	9d54.7	-15d44.4	247d23.7	-53d38.4	74d35.3	52d48.5	1920.0

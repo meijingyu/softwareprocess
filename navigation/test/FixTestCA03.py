@@ -1,7 +1,6 @@
 import unittest
 import uuid
 import os
-import navigation.test.FixTestCA03
 import navigation.prod.Fix as F
 
 class TestFix(unittest.TestCase):

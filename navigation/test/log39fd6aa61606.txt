@@ -1,0 +1,5 @@
+LOG:	2016-12-02 22:19:28	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/log39fd6aa61606.txt
+LOG:	2016-12-02 22:19:28	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA02_300_ValidOneStarWithDefaultValues.xml
+LOG:	2016-12-02 22:19:28	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
+LOG:	2016-12-02 22:19:28	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
+LOG:	2016-12-02 22:19:28	Hadar	2017-03-01	23:40:01	29d59.9	-60d26.8	293d55.2	-53d38.4	74d35.3	149d17.8	3107.0

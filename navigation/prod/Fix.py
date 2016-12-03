@@ -1,6 +1,6 @@
 import os
 import re
-import xml.dom.minidom
+#import xml.dom.minidom
 import time
 import math
 import Angle 
@@ -38,7 +38,11 @@ class Fix(object):
         self.setAriesFileFlag =0
         self.assumd_lat =''
         self.assumd_lon =''
-        self.adjustideAtitude=0 
+        self.adjustideAtitude=0
+        self.sum1 = 0
+        self.sum2 = 0
+        self.assumd_lon_angle_number=0
+        self.assumd_lat_angle_number=0
         try:
             self.logFile = open(logFile,'r')
         except IOError:
@@ -101,6 +105,8 @@ class Fix(object):
         doc = minidom.parse(openxmlfile)
         root = doc.documentElement
         sightings = root.getElementsByTagName("sighting")
+        self.sum1 = 0
+        self.sum2 = 0
         for sighting in sightings:
 
             if len(sighting.getElementsByTagName("body"))!=0:
@@ -237,12 +243,42 @@ class Fix(object):
                 geographicPositionLongitude = longtitude_angle.getString()
                 self.geographicPositionLongitude =geographicPositionLongitude
             a  = self.calculatelocalhourangle()
-            print a[0],a[1] 
+            print a[0],a[1]
+            azi = a[0]
+            distanceA =a[1]
+            azi_angle =Angle.Angle()
+            azi_degrees = azi_angle.setDegreesAndMinutes(azi)
+            azi_radians = math.radians(azi_degrees)
+            distance_cos = distanceA*math.cos(azi_radians)
+            distance_sin =distanceA*math.sin(azi_radians)
+            self.sum1= self.sum1+distance_cos
+            self.sum2 =self.sum2+distance_sin
             time_now= self.get_time()
-            self.logFile.write("LOG:\t"+time_now+"\t"+self.body+"\t"+self.date+"\t"+self._time_+"\t"+str(adjustideAtitude_angle)+"\t"+self.geographicPositionLatitude+"\t"+self.geographicPositionLongitude+"\n")
+            self.logFile.write("LOG:\t"+time_now+"\t"+self.body+"\t"+self.date+"\t"+self._time_+"\t"+str(adjustideAtitude_angle)+"\t"+self.geographicPositionLatitude+"\t"+self.geographicPositionLongitude+"\t"+self.assumd_lat+"\t"+self.assumd_lon+"\t"+a[0]+"\t"+str(a[1])+"\n")
             self.logFile.flush()
+        
+        approximate_lat =self.assumd_lat_angle_number+self.sum1/60
+        if  0<approximate_lat<180 or -180> approximate_lat>-360:
+            appro_angle  = Angle.Angle()
+            approximate_lat = abs(approximate_lat)%90
+            appro_angle.setDegrees(approximate_lat)
+            appro_lat = appro_angle.getString()
+            self.approximateLatitude = 'N'+appro_lat
+        if 180 <approximate_lat <360 or -180< approximate_lat <0:
+            appro_angle  = Angle.Angle()
+            approximate_lat = 90 - abs(approximate_lat)%90
+            appro_angle.setDegrees(approximate_lat)
+            appro_lat = appro_angle.getString()
+            self.approximateLatitude = 's'+appro_lat
+        
+        approximate_lon =self.assumd_lon_angle_number+self.sum2/60
+        appro_angle_lon = Angle.Angle()
+        appro_angle_lon.setDegrees(approximate_lon)
+        self.approximateLongitude = appro_angle_lon.getString()
+        
         time_now= self.get_time()
         self.logFile.write("LOG:\t"+time_now+"\t"+"Sighting errors:\t"+str(self.sightingfileerror)+"\n")
+        self.logFile.write("LOG:\t"+time_now+"\t"+"Approximate Latitude:\t"+self.approximateLatitude+"\t"+"Approximate Lontitude:"+"\t"+self.approximateLongitude+"\n")
         self.logFile.flush()
         self.logFile.close()
         print  self.geographicPositionLatitude+"\t"+self.geographicPositionLongitude
@@ -336,22 +372,40 @@ class Fix(object):
             starFile_data = {'body': '', 'date': '', 'longitude': '','latitude':'' }
             for starReadline in starReadlines:
                     starFilelist = starReadline.split()
-                    if(starFilelist[0] == self.body):
-                        date_list1 =self.date.split("-")
-                        date_month=date_list1[1]
-                        date_day = date_list1[2]
-                        date_list2 =starFilelist[1].split("/")
-                        filedate_day = date_list2[1]
-                        filedate_month =date_list2[0]
-                        date1 = date_month+date_day  
-                        date2 = filedate_month+filedate_day
-                        if int(date_month)==int(filedate_month)and int(date_day)>= int(filedate_day) and a ==0:
-                            starFile_data = {'body': starFilelist[0], 
-                             'date': starFilelist[1],
-                             'longtitude': starFilelist[2],
-                             'latitude': starFilelist[3]}
-                            a += 1
-                            return starFile_data
+                    if len(starFilelist) == 4:
+                        if(starFilelist[0] == self.body):
+                            date_list1 =self.date.split("-")
+                            date_month=date_list1[1]
+                            date_day = date_list1[2]
+                            date_list2 =starFilelist[1].split("/")
+                            filedate_day = date_list2[1]
+                            filedate_month =date_list2[0]
+                            date1 = date_month+date_day  
+                            date2 = filedate_month+filedate_day
+                            if int(date_month)==int(filedate_month)and int(date_day)>= int(filedate_day) and a ==0:
+                                starFile_data = {'body': starFilelist[0], 
+                                 'date': starFilelist[1],
+                                 'longtitude': starFilelist[2],
+                                 'latitude': starFilelist[3]}
+                                a += 1
+                                return starFile_data
+                    if len(starFilelist) ==5:
+                        if(starFilelist[0]+' '+starFilelist[1] == self.body):
+                            date_list1 =self.date.split("-")
+                            date_month=date_list1[1]
+                            date_day = date_list1[2]
+                            date_list2 =starFilelist[2].split("/")
+                            filedate_day = date_list2[1]
+                            filedate_month =date_list2[0]
+                            date1 = date_month+date_day  
+                            date2 = filedate_month+filedate_day
+                            if int(date_month)==int(filedate_month)and int(date_day)>= int(filedate_day) and a ==0:
+                                starFile_data = {'body': starFilelist[0]+' '+starFilelist[1], 
+                                 'date': starFilelist[2],
+                                 'longtitude': starFilelist[3],
+                                 'latitude': starFilelist[4]}
+                                a += 1
+                                return starFile_data
             if a==0:
                 return False
     def readAriesFile(self):
@@ -406,18 +460,16 @@ class Fix(object):
                         a=a+1
             if a == 0:
                 return False
-        def calculateapproximateLatitude(self):
-            pass
-        def calculateapproximateLontitude(self):
-            pass
-        def calculatelocalhourangle(self):
+            
+    def calculatelocalhourangle(self):
             geo_lon_angle = Angle.Angle()
             geo_lon_angle_number  = geo_lon_angle.setDegreesAndMinutes(self.geographicPositionLongitude)
             assumd_lon_angle =Angle.Angle()
             assumd_lon_angle_number = assumd_lon_angle.setDegreesAndMinutes(self.assumd_lon)
+            self.assumd_lon_angle_number =assumd_lon_angle_number
             LHA = geo_lon_angle_number  + assumd_lon_angle_number
             LHA_angle = Angle.Angle()
-            LHA_angle.setDegrees(LHA_angle)
+            LHA_angle.setDegrees(LHA)
             LHA_angle_str = LHA_angle.getString()
             geo_lat_angle =Angle.Angle()
             geo_lat_angle_number = geo_lat_angle.setDegreesAndMinutes(self.geographicPositionLatitude)
@@ -425,12 +477,13 @@ class Fix(object):
             sinlat1 = math.sin(geoLatitude_radians)
             assumd_lat_angle =Angle.Angle()
             assumd_lat_angle_number = assumd_lat_angle.setDegreesAndMinutes(self.assumd_lat)
+            self.assumd_lat_angle_number =assumd_lat_angle_number
             assumd_lat_radians = math.radians(assumd_lat_angle_number)
             sinlat2 = math.sin(assumd_lat_radians)
             sinlat =sinlat1 * sinlat2
             coslat1 = math.cos(geoLatitude_radians)
             coslat2 =math.cos(assumd_lat_radians)
-            LHA_angle_radians = math.radians(LHA_angle)
+            LHA_angle_radians = math.radians(LHA)
             cos_LHA = math.cos(LHA_angle_radians)
             coslat = coslat1*coslat2*cos_LHA
             intermediate_distance=coslat+sinlat

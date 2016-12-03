@@ -1,0 +1,5 @@
+LOG:	2016-12-02 22:20:48	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/logb661dbd068e3.txt
+LOG:	2016-12-02 22:20:48	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA02_300_ValidOneStarSighting.xml
+LOG:	2016-12-02 22:20:48	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
+LOG:	2016-12-02 22:20:48	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
+LOG:	2016-12-02 22:20:48	Aldebaran	2017-03-01	23:40:01	15d1.5	16d32.3	75d57.7	-53d38.4	74d35.3	136d53.4	-3685.0
