@@ -3,7 +3,7 @@ import re
 import xml.dom.minidom
 import time
 import math
-import navigation.prod.Angle as Angle
+import Angle 
 from xml.dom import minidom
 #11234132412412
 
@@ -35,7 +35,10 @@ class Fix(object):
         self.ariesFilestr_1 ="aries.txt"
         self.starFilestr_1 ="stars.txt" 
         self.setstarFileFlag = 0     
-        self.setAriesFileFlag =0     
+        self.setAriesFileFlag =0
+        self.assumd_lat =''
+        self.assumd_lon =''
+        self.adjustideAtitude=0 
         try:
             self.logFile = open(logFile,'r')
         except IOError:
@@ -79,7 +82,9 @@ class Fix(object):
             raise ValueError('Fix.setSightingFile:')
         return self.absSightingFilePath
        
-    def getSightings(self):
+    def getSightings(self, assumd_lat='-53d38.4',assumd_lon='74d35.3'):
+        self.assumd_lat=assumd_lat 
+        self.assumd_lon=assumd_lon 
         try:
             os.path.exists(self.sightingFile)
         except:
@@ -200,6 +205,7 @@ class Fix(object):
             refraction = ( -0.00452 * float(pressure) ) / ( 273 + (float(temperature) - 32 ) / 1.8 ) /math.tan((math.pi * float(observation_angle_degrees))/180.0)             
             adjustideAtitude = observation_angle_degrees+dip+(refraction)
             adjust_angle = Angle.Angle()
+            self.adjustideAtitude =adjustideAtitude
             adjust_angle.setDegrees(adjustideAtitude)
 
             adjustideAtitude_angle =adjust_angle.getString()
@@ -230,7 +236,8 @@ class Fix(object):
                 longtitude_angle.setDegrees(longtitude)
                 geographicPositionLongitude = longtitude_angle.getString()
                 self.geographicPositionLongitude =geographicPositionLongitude
-
+            a  = self.calculatelocalhourangle()
+            print a[0],a[1] 
             time_now= self.get_time()
             self.logFile.write("LOG:\t"+time_now+"\t"+self.body+"\t"+self.date+"\t"+self._time_+"\t"+str(adjustideAtitude_angle)+"\t"+self.geographicPositionLatitude+"\t"+self.geographicPositionLongitude+"\n")
             self.logFile.flush()
@@ -399,4 +406,50 @@ class Fix(object):
                         a=a+1
             if a == 0:
                 return False
+        def calculateapproximateLatitude(self):
+            pass
+        def calculateapproximateLontitude(self):
+            pass
+        def calculatelocalhourangle(self):
+            geo_lon_angle = Angle.Angle()
+            geo_lon_angle_number  = geo_lon_angle.setDegreesAndMinutes(self.geographicPositionLongitude)
+            assumd_lon_angle =Angle.Angle()
+            assumd_lon_angle_number = assumd_lon_angle.setDegreesAndMinutes(self.assumd_lon)
+            LHA = geo_lon_angle_number  + assumd_lon_angle_number
+            LHA_angle = Angle.Angle()
+            LHA_angle.setDegrees(LHA_angle)
+            LHA_angle_str = LHA_angle.getString()
+            geo_lat_angle =Angle.Angle()
+            geo_lat_angle_number = geo_lat_angle.setDegreesAndMinutes(self.geographicPositionLatitude)
+            geoLatitude_radians = math.radians(geo_lat_angle_number)
+            sinlat1 = math.sin(geoLatitude_radians)
+            assumd_lat_angle =Angle.Angle()
+            assumd_lat_angle_number = assumd_lat_angle.setDegreesAndMinutes(self.assumd_lat)
+            assumd_lat_radians = math.radians(assumd_lat_angle_number)
+            sinlat2 = math.sin(assumd_lat_radians)
+            sinlat =sinlat1 * sinlat2
+            coslat1 = math.cos(geoLatitude_radians)
+            coslat2 =math.cos(assumd_lat_radians)
+            LHA_angle_radians = math.radians(LHA_angle)
+            cos_LHA = math.cos(LHA_angle_radians)
+            coslat = coslat1*coslat2*cos_LHA
+            intermediate_distance=coslat+sinlat
+            corrected_altitude  = math.asin(intermediate_distance)
+            corrected_altitude_degree = math.degrees(corrected_altitude)
+            
+            distance_adjustment = corrected_altitude_degree - self.adjustideAtitude
+            distance_adjustment = round(60 * distance_adjustment)
+            numerator_1 = sinlat1-sinlat2*intermediate_distance
+            coslat3 = math.cos(corrected_altitude)
+            denominator =  coslat2 * coslat3
+            intermedia_azimuth =    numerator_1 / denominator
+            azimuth_adjustment =    math.acos(numerator_1 /denominator)
+            azimuth_adjustment_degree =math.degrees(azimuth_adjustment)
+            azimuth_adjustment_angle =Angle.Angle()
+            azimuth_adjustment_angle.setDegrees(azimuth_adjustment_degree)
+            azimuth_adjustment_str = azimuth_adjustment_angle.getString()
+            return azimuth_adjustment_str,distance_adjustment
+             
+            
+            
                 
