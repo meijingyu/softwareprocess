@@ -1,0 +1,6 @@
+LOG:	2016-12-02 18:19:16	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/log3c140170a476.txt
+LOG:	2016-12-02 18:19:16	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_300_ValidStarLatLonInterpolationRequired.xml
+LOG:	2016-12-02 18:19:16	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
+LOG:	2016-12-02 18:19:16	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
+LOG:	2016-12-02 18:19:16	Betelgeuse	2017-01-16	03:15:42	9d54.7	7d24.3	70d59.0
+LOG:	2016-12-02 18:19:16	Sighting errors:	0

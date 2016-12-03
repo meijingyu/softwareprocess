@@ -6,6 +6,7 @@ import math
 import navigation.prod.Angle as Angle
 from xml.dom import minidom
 #11234132412412
+
 class Fix(object):
     def __init__(self,logFile='log.txt'):
         functionName = "Fix.__init__: "
@@ -32,7 +33,9 @@ class Fix(object):
         self.approximateLatitude = "0d0.0"            
         self.approximateLongitude = "0d0.0"
         self.ariesFilestr_1 ="aries.txt"
-        self.starFilestr_1 ="stars.txt"           
+        self.starFilestr_1 ="stars.txt" 
+        self.setstarFileFlag = 0     
+        self.setAriesFileFlag =0     
         try:
             self.logFile = open(logFile,'r')
         except IOError:
@@ -85,6 +88,10 @@ class Fix(object):
         dateStr = "^(?P<year>[0-9]{4})\-(?P<month>[0-3]?[0-9])\-(?P<day>[0-3]?[0-9])$"
         if self.sightingFileString =="":
             raise ValueError("Fix.getSightings:")
+        if self.setstarFileFlag==0:
+            raise ValueError('Fix.getSightings:')
+        if self.setAriesFileFlag ==0:
+            raise ValueError('Fix.getSightings:')
         openxmlfile=open(self.sightingFileString)
         doc = minidom.parse(openxmlfile)
         root = doc.documentElement
@@ -236,7 +243,7 @@ class Fix(object):
         return (self.approximateLatitude, self.approximateLongitude)
     
     def setAriesFile(self,ariesFile=0):
-        print "start"
+        self.setAriesFileFlag =1
         if ariesFile is 0:
             
             raise ValueError('Fix.setAriesFile:')
@@ -271,6 +278,7 @@ class Fix(object):
 
                 raise ValueError("Fix.setAriesFile:")
     def setStarFile(self,starFile=0):
+        self.setstarFileFlag =1
         if starFile is 0:
             raise ValueError('Fix.setStarFile:')
         self.starFile =starFile
