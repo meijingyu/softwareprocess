@@ -2,3 +2,15 @@ LOG:	2016-12-02 13:45:55	Log file:/Users/apple/Documents/编程/test/prod/log.tx
 LOG:	2016-12-02 13:45:55	sSighting file:	/Users/apple/Documents/编程/test/prod/sightingFile.xml
 LOG:	2016-12-02 13:45:55	Aries file:/Users/apple/Documents/编程/test/prod/aries.txt
 LOG:	2016-12-02 13:45:55	Star file:/Users/apple/Documents/编程/test/prod/stars.txt
+LOG:	2016-12-02 20:20:59	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/prod/log.txt
+LOG:	2016-12-02 20:21:02	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/prod/log.txt
+LOG:	2016-12-02 20:21:02	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/prod/log.txt
+LOG:	2016-12-02 20:21:03	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/prod/log.txt
+LOG:	2016-12-02 20:21:06	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/prod/log.txt
+LOG:	2016-12-02 20:21:12	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/prod/log.txt
+LOG:	2016-12-02 20:21:13	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/prod/log.txt
+LOG:	2016-12-02 20:21:14	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/prod/log.txt
+LOG:	2016-12-02 20:21:14	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/prod/log.txt
+LOG:	2016-12-02 20:21:30	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/prod/log.txt
+LOG:	2016-12-02 20:32:02	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/prod/log.txt
+LOG:	2016-12-02 20:32:04	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/prod/log.txt
