@@ -253,6 +253,13 @@ class Fix(object):
             distance_sin =distanceA*math.sin(azi_radians)
             self.sum1= self.sum1+distance_cos
             self.sum2 =self.sum2+distance_sin
+            geo_latlist = self.geographicPositionLatitude.split('d')
+            geo_lat1 = geo_latlist[0]
+            if int(geo_lat1)>0:
+                self.geographicPositionLatitude = 'N'+self.geographicPositionLatitude
+            else:
+                geo_lat1 =abs(int(geo_lat1))
+                self.geographicPositionLatitude ='S'+str(geo_lat1)+"d"+geo_latlist[1]
             time_now= self.get_time()
             self.logFile.write("LOG:\t"+time_now+"\t"+self.body+"\t"+self.date+"\t"+self._time_+"\t"+str(adjustideAtitude_angle)+"\t"+self.geographicPositionLatitude+"\t"+self.geographicPositionLongitude+"\t"+self.assumd_lat+"\t"+self.assumd_lon+"\t"+a[0]+"\t"+str(a[1])+"\n")
             self.logFile.flush()
