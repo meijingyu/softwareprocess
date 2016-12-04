@@ -1,5 +1,5 @@
 import unittest
-import prod.Angle as Angle
+import navigation.prod.Angle as Angle
 
 
 class AngleTest(unittest.TestCase):

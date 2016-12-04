@@ -86,7 +86,19 @@ class Fix(object):
             raise ValueError('Fix.setSightingFile:')
         return self.absSightingFilePath
        
-    def getSightings(self, assumd_lat='-53d38.4',assumd_lon='74d35.3'):
+    def getSightings(self, assumd_lat='0d0.0',assumd_lon='0d0.0'): 
+        if 'S' not in assumd_lat:
+            if 'N' not in assumd_lat:
+                assumd_lat_angle = Angle.Angle()
+                try:
+                    assumd_lat.angle.setDegreesAndMinutes(assumd_lat)
+                except:
+                    raise ValueError('Fix.getSightings:')
+            assumd_lat = assumd_lat
+        if 'N' in assumd_lat:
+            assumd_lat = assumd_lat.replace('N','')
+        if 'S' in assumd_lat:
+            assmud_lat = assumd_lat.replase('S','-')
         self.assumd_lat=assumd_lat 
         self.assumd_lon=assumd_lon 
         try:
