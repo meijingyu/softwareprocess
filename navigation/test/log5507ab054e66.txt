@@ -1,4 +1,0 @@
-LOG:	2016-12-02 22:15:25	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/log5507ab054e66.txt
-LOG:	2016-12-02 22:15:25	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA02_300_InvalidHorizon.xml
-LOG:	2016-12-02 22:15:25	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
-LOG:	2016-12-02 22:15:25	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt

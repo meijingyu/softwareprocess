@@ -1,0 +1,4 @@
+LOG:	2016-12-04 17:03:20	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/logec3f48892cd7.txt
+LOG:	2016-12-04 17:03:20	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA02_300_InvalidPressure.xml
+LOG:	2016-12-04 17:03:20	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
+LOG:	2016-12-04 17:03:20	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt

@@ -91,14 +91,24 @@ class Fix(object):
             if 'N' not in assumd_lat:
                 assumd_lat_angle = Angle.Angle()
                 try:
-                    assumd_lat.angle.setDegreesAndMinutes(assumd_lat)
+                    assumd_lat_angle.setDegreesAndMinutes(assumd_lat)
                 except:
                     raise ValueError('Fix.getSightings:')
-            assumd_lat = assumd_lat
         if 'N' in assumd_lat:
+            assumd_lat_angle = Angle.Angle()
+            try:
+                assumd_lat_angle.setDegreesAndMinutes(assumd_lat)
+            except:
+                raise ValueError('Fix.getSightings:')
             assumd_lat = assumd_lat.replace('N','')
         if 'S' in assumd_lat:
-            assmud_lat = assumd_lat.replase('S','-')
+            assumd_lat = assumd_lat.replace('S','-')
+            print assumd_lat
+            assumd_lat_angle = Angle.Angle()
+            try:
+                assumd_lat_angle.setDegreesAndMinutes(assumd_lat)
+            except:
+                raise ValueError('Fix.getSightings:')
         self.assumd_lat=assumd_lat 
         self.assumd_lon=assumd_lon 
         try:

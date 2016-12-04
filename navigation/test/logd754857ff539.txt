@@ -1,5 +1,0 @@
-LOG:	2016-12-02 22:20:48	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/logd754857ff539.txt
-LOG:	2016-12-02 22:20:48	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA02_300_ValidWithExtraneousTags.xml
-LOG:	2016-12-02 22:20:48	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
-LOG:	2016-12-02 22:20:48	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
-LOG:	2016-12-02 22:20:48	Sirius	2017-03-01	00:05:05	45d11.9	-16d44.5	57d45.6	-53d38.4	74d35.3	134d17.0	-3231.0

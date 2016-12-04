@@ -1,0 +1,7 @@
+LOG:	2016-12-04 17:09:43	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/logc82aa6394fa2.txt
+LOG:	2016-12-04 17:09:43	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_300_ValidStarLatLonInterpolationRequired.xml
+LOG:	2016-12-04 17:09:43	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
+LOG:	2016-12-04 17:09:43	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
+LOG:	2016-12-04 17:09:43	Betelgeuse	2017-01-16	03:15:42	9d54.7	N7d24.3	70d59.0	0d0.0	0d0.0	82d10.4	536.0
+LOG:	2016-12-04 17:09:43	Sighting errors:	0
+LOG:	2016-12-04 17:09:43	Approximate Latitude:	N1d13.0	Approximate Lontitude:	8d51.0
