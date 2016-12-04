@@ -307,7 +307,7 @@ class Fix(object):
         
         time_now= self.get_time()
         self.logFile.write("LOG:\t"+time_now+"\t"+"Sighting errors:\t"+str(self.sightingfileerror)+"\n")
-        self.logFile.write("LOG:\t"+time_now+"\t"+"Approximate Latitude:\t"+self.approximateLatitude+"\t"+"Approximate Lontitude:"+"\t"+self.approximateLongitude+"\n")
+        self.logFile.write("LOG:\t"+time_now+"\t"+"Approximate Latitude:\t"+self.approximateLatitude+"\t"+"Approximate Longtitude:"+"\t"+self.approximateLongitude+"\n")
         self.logFile.flush()
         self.logFile.close()
         print  self.geographicPositionLatitude+"\t"+self.geographicPositionLongitude
