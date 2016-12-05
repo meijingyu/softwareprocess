@@ -1,4 +1,0 @@
-LOG:	2016-12-04 17:01:34	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/loga076d5147ace.txt
-LOG:	2016-12-04 17:01:34	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA02_300_InvalidWithMissingMandatoryTags.xml
-LOG:	2016-12-04 17:01:34	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
-LOG:	2016-12-04 17:01:34	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt

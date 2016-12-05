@@ -1,4 +1,0 @@
-LOG:	2016-12-04 16:53:30	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/loge4f69843475d.txt
-LOG:	2016-12-04 16:53:30	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA02_300_InvalidTemperature.xml
-LOG:	2016-12-04 16:53:30	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
-LOG:	2016-12-04 16:53:30	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
