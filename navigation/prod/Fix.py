@@ -471,8 +471,10 @@ class Fix(object):
                                 a += 1
                                 return starFile_data
                     if len(starFilelist) ==5:
-                        if 'Kentaurus' in self.body:
-                            self.body = self.body.repalce("Kentaurus",'kent.')
+                        if 'Kentanurus' in self.body:
+                            body =self.body
+                            self.body = body.replace('Kentanurus','Kent.')
+                            print "self.body",self.body
                         if(starFilelist[0]+' '+starFilelist[1] == self.body):
                             date_list1 =self.date.split("-")
                             date_month=date_list1[1]
