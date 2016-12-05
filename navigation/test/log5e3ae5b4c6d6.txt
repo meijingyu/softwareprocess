@@ -1,0 +1,7 @@
+LOG:	2016-12-05 00:29:14	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/log5e3ae5b4c6d6.txt
+LOG:	2016-12-05 00:29:14	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_300_ValidStarLatLon.xml
+LOG:	2016-12-05 00:29:14	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
+LOG:	2016-12-05 00:29:14	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
+LOG:	2016-12-05 00:29:14	Sabik	2017-01-01	03:00:00	9d54.7	S15d44.5	247d23.5	0d0.0	0d0.0	106d58.8	-1898.0
+LOG:	2016-12-05 00:29:14	Sighting errors:	0
+LOG:	2016-12-05 00:29:14	Approximate Latitude:	N9d14.3	Approximate Longitude:	329d44.7

@@ -455,20 +455,15 @@ class Fix(object):
                     starFilelist = starReadline.split()
                     if len(starFilelist) == 4:
                         if(starFilelist[0] == self.body):
-                            date_list1 =self.date.split("-")
-                            date_month=date_list1[1]
-                            date_day = date_list1[2]
-                            date_list2 =starFilelist[1].split("/")
-                            filedate_day = date_list2[1]
-                            filedate_month =date_list2[0]
-                            date1 = date_month+date_day  
-                            date2 = filedate_month+filedate_day
-                            if int(date_month)==int(filedate_month)and int(date_day)>= int(filedate_day) and a ==0:
+                            date1 = time.strptime(self.date, "%Y-%m-%d")
+                            date2 = time.strptime(starFilelist[1], "%m/%d/%y")
+                            if date1>date2 or a == 0:
                                 starFile_data = {'body': starFilelist[0], 
                                  'date': starFilelist[1],
                                  'longtitude': starFilelist[2],
                                  'latitude': starFilelist[3]}
-                                a += 1
+                                a+= 1
+                            else:
                                 return starFile_data
                     if len(starFilelist) ==5:
                         if 'Kentanurus' in self.body:
@@ -476,20 +471,15 @@ class Fix(object):
                             self.body = body.replace('Kentanurus','Kent.')
                             print "self.body",self.body
                         if(starFilelist[0]+' '+starFilelist[1] == self.body):
-                            date_list1 =self.date.split("-")
-                            date_month=date_list1[1]
-                            date_day = date_list1[2]
-                            date_list2 =starFilelist[2].split("/")
-                            filedate_day = date_list2[1]
-                            filedate_month =date_list2[0]
-                            date1 = date_month+date_day  
-                            date2 = filedate_month+filedate_day
-                            if int(date_month)==int(filedate_month)and int(date_day)<= int(filedate_day) and a ==0:
+                            date1 = time.strptime(self.date, "%Y-%m-%d")
+                            date2 = time.strptime(starFilelist[2], "%m/%d/%y")
+                            if date1>date2 or a== 0:
                                 starFile_data = {'body': starFilelist[0]+' '+starFilelist[1], 
                                  'date': starFilelist[2],
                                  'longtitude': starFilelist[3],
                                  'latitude': starFilelist[4]}
-                                a += 1
+                                a+= 1
+                            else:
                                 return starFile_data
             if a==0:
                 return False

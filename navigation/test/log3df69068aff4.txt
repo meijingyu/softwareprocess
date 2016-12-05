@@ -1,0 +1,7 @@
+LOG:	2016-12-05 00:31:24	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/log3df69068aff4.txt
+LOG:	2016-12-05 00:31:24	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA02_300_GenericValidStarSightingFile.xml
+LOG:	2016-12-05 00:31:24	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
+LOG:	2016-12-05 00:31:24	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
+LOG:	2016-12-05 00:31:24	Pollux	2017-04-17	23:50:14	15d1.5	N27d59.0	87d30.7	N27d59.5	85d33.4	7d21.2	-2919.0
+LOG:	2016-12-05 00:31:24	Sighting errors:	1
+LOG:	2016-12-05 00:31:24	Approximate Latitude:	S20d15.5	Approximate Longitude:	79d19.8
