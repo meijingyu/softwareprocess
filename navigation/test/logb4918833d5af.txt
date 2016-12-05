@@ -1,0 +1,7 @@
+LOG:	2016-12-04 22:43:44	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/logb4918833d5af.txt
+LOG:	2016-12-04 22:43:44	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA02_300_ValidOneStarArtificialHorizon.xml
+LOG:	2016-12-04 22:43:44	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
+LOG:	2016-12-04 22:43:44	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
+LOG:	2016-12-04 22:43:44	Hadar	2017-03-01	23:40:01	30d0.2	S60d26.8	303d57.1	0d0.0	0d0.0	154d48.8	-841.0
+LOG:	2016-12-04 22:43:44	Sighting errors:	0
+LOG:	2016-12-04 22:43:44	Approximate Latitude:	N12d41.0	Approximate Longitude:	354d2.1

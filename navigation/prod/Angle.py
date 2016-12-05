@@ -31,8 +31,6 @@ class Angle():
                 degreeslist = degrees.split('d')
             except:
                 raise ValueError('Angle.setDegreesAndMinutes:')
-
-
             if (len(degreeslist)== 2):
                 D = degreeslist[0]
                 M = degreeslist[1]
@@ -63,13 +61,13 @@ class Angle():
                             elif D< -360:
                                 D =  D% 360    
                             M = float(M)
-                            M = M/60 
+                            M = M/60
                             degrees = abs(int(D))+float(M)
                             degrees = float(degrees)
                             if D_degrees < 0 and D_degrees > -360:
                                 degrees = 360 -degrees 
-                            self.degrees = degrees 
-                            return degrees
+                            self.setDegrees(degrees)
+                            return self.degrees
                         else:
                             raise ValueError('Angle.setDegreesAndMinutes:')
                     else:

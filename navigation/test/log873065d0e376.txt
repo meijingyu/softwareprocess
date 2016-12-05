@@ -1,0 +1,5 @@
+LOG:	2016-12-04 23:24:45	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/log873065d0e376.txt
+LOG:	2016-12-04 23:24:45	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA02_300_ValidMultipleStarSighting.xml
+LOG:	2016-12-04 23:24:45	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
+LOG:	2016-12-04 23:24:45	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
+LOG:	2016-12-04 23:24:45	Canopus	2017-03-02	23:40:01	15d1.5	S52d42.8	60d6.6	0d0.0	0d0.0	146d34.2	153.0

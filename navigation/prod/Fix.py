@@ -293,7 +293,7 @@ class Fix(object):
                 geo_lat1 =abs(int(geo_lat1))
                 self.geographicPositionLatitude ='S'+str(geo_lat1)+"d"+geo_latlist[1]
             time_now= self.get_time()
-            self.logFile.write("LOG:\t"+time_now+"\t"+self.body+"\t"+self.date+"\t"+self._time_+"\t"+str(adjustideAtitude_angle)+"\t"+self.geographicPositionLatitude+"\t"+self.geographicPositionLongitude+"\t"+self.assumd_lat+"\t"+self.assumd_lon+"\t"+a[0]+"\t"+str(a[1])+"\n")
+            self.logFile.write("LOG:\t"+time_now+"\t"+self.body+"\t"+self.date+"\t"+self._time_+"\t"+str(adjustideAtitude_angle)+"\t"+self.geographicPositionLatitude+"\t"+self.geographicPositionLongitude+"\t"+assumd_lat+"\t"+self.assumd_lon+"\t"+a[0]+"\t"+str(a[1])+"\n")
             self.logFile.flush()
         print "self.sum1",self.sum1
         print "self.sum2",self.sum2
@@ -360,7 +360,7 @@ class Fix(object):
         
         time_now= self.get_time()
         self.logFile.write("LOG:\t"+time_now+"\t"+"Sighting errors:\t"+str(self.sightingfileerror)+"\n")
-        self.logFile.write("LOG:\t"+time_now+"\t"+"Approximate Latitude:\t"+self.approximateLatitude+"\t"+"Approximate Longtitude:"+"\t"+self.approximateLongitude+"\n")
+        self.logFile.write("LOG:\t"+time_now+"\t"+"Approximate Latitude:\t"+self.approximateLatitude+"\t"+"Approximate Longitude:"+"\t"+self.approximateLongitude+"\n")
         self.logFile.flush()
         self.logFile.close()
         print  "jieguoshi:",self.approximateLatitude+"\t"+self.approximateLongitude
@@ -455,15 +455,9 @@ class Fix(object):
                     starFilelist = starReadline.split()
                     if len(starFilelist) == 4:
                         if(starFilelist[0] == self.body):
-                            date_list1 =self.date.split("-")
-                            date_month=date_list1[1]
-                            date_day = date_list1[2]
-                            date_list2 =starFilelist[1].split("/")
-                            filedate_day = date_list2[1]
-                            filedate_month =date_list2[0]
-                            date1 = date_month+date_day  
-                            date2 = filedate_month+filedate_day
-                            if int(date_month)==int(filedate_month) and int(date_day) <= int(filedate_day) and a ==0:
+                            date1 = time.strptime(self.date, "%Y-%m-%d")
+                            date2 = time.strptime(starFilelist[1], "%m/%d/%y")
+                            if date1>date2 or a==0:
                                 starFile_data = {'body': starFilelist[0], 
                                  'date': starFilelist[1],
                                  'longtitude': starFilelist[2],
@@ -472,15 +466,11 @@ class Fix(object):
                                 return starFile_data
                     if len(starFilelist) ==5:
                         if(starFilelist[0]+' '+starFilelist[1] == self.body):
-                            date_list1 =self.date.split("-")
-                            date_month=date_list1[1]
-                            date_day = date_list1[2]
-                            date_list2 =starFilelist[2].split("/")
-                            filedate_day = date_list2[1]
-                            filedate_month =date_list2[0]
-                            date1 = date_month+date_day  
-                            date2 = filedate_month+filedate_day
-                            if int(date_month)==int(filedate_month)and int(date_day)>= int(filedate_day) and a ==0:
+                            date1 = time.strptime(self.date, "%Y-%m-%d")
+                            date2 = time.strptime(starFilelist[2], "%m/%d/%y")
+                            
+                            print "date:",date1,date2
+                            if date1>date2 or a ==0:
                                 starFile_data = {'body': starFilelist[0]+' '+starFilelist[1], 
                                  'date': starFilelist[2],
                                  'longtitude': starFilelist[3],
@@ -548,12 +538,14 @@ class Fix(object):
             print "self.geographicPositionLongitude",self.geographicPositionLongitude
             assumd_lon_angle =Angle.Angle()
             assumd_lon_angle_number = assumd_lon_angle.setDegreesAndMinutes(self.assumd_lon)
+            print 'assumd_lon_angle_number',assumd_lon_angle_number
             self.assumd_lon_angle_number =assumd_lon_angle_number
-            LHA = geo_lon_angle_number  + assumd_lon_angle_number
+            LHA = assumd_lon_angle_number + geo_lon_angle_number
             print "LHA:",LHA
             LHA_angle = Angle.Angle()
             LHA_angle.setDegrees(LHA)
             LHA_angle_str = LHA_angle.getString()
+            print 'LHA_angle_str',LHA_angle_str
             geo_lat_angle =Angle.Angle()
             geo_lat_angle_number = geo_lat_angle.setDegreesAndMinutes(self.geographicPositionLatitude)
             geoLatitude_radians = math.radians(geo_lat_angle_number)
@@ -570,7 +562,7 @@ class Fix(object):
             coslat1 = math.cos(geoLatitude_radians)
             print "coslat1",coslat1
             coslat2 =math.cos(assumd_lat_radians)
-            print "coslat2",coslat1
+            print "coslat2",coslat2
             LHA_angle_radians = math.radians(LHA)
             cos_LHA = math.cos(LHA_angle_radians)
             print "coslha",cos_LHA
@@ -582,8 +574,16 @@ class Fix(object):
             print "corrected_altitude",corrected_altitude
             corrected_altitude_degree = math.degrees(corrected_altitude)
             print "corrected_altitude-degrees",corrected_altitude_degree
+            cor_angle =Angle.Angle()
+            cor_angle.setDegrees(corrected_altitude_degree)
+            cor_str=cor_angle.getString()
+            adjust_angle = Angle.Angle()
+            adjust_angle.setDegrees(self.adjustideAtitude)
+            adjust_str = adjust_angle.getString()
+            print "jianche :",cor_str,adjust_str
             distance_adjustment = corrected_altitude_degree - self.adjustideAtitude
             print 'distance_adjustment',distance_adjustment
+            print "60 * distance_adjustment ", 60 * distance_adjustment
             distance_adjustment = round(60 * distance_adjustment)
             print 'distance_adjustment_round',distance_adjustment
             numerator_1 = sinlat1-sinlat2*intermediate_distance

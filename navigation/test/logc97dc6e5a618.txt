@@ -1,8 +1,0 @@
-LOG:	2016-12-04 17:53:03	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/logc97dc6e5a618.txt
-LOG:	2016-12-04 17:53:03	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA02_300_GenericValidStarSightingFile.xml
-LOG:	2016-12-04 17:53:03	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
-LOG:	2016-12-04 17:53:03	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
-LOG:	2016-12-04 17:53:03	Aldebaran	2017-03-01	23:40:01	15d1.5	N16d32.3	75d57.7	27d59.5	85d33.4	24d8.4	-3422.0
-LOG:	2016-12-04 17:53:03	Peacock	2017-03-02	00:05:05	45d11.9	S56d40.7	213d29.8	27d59.5	85d33.4	150d54.5	-3253.0
-LOG:	2016-12-04 17:53:03	Sighting errors:	0
-LOG:	2016-12-04 17:53:03	Approximate Latitude:	N23d19.4	Approximate Longtitude:	35d52.3

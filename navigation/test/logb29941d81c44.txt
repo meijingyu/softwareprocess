@@ -1,0 +1,4 @@
+LOG:	2016-12-04 23:24:45	Log file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/logb29941d81c44.txt
+LOG:	2016-12-04 23:24:45	sSighting file:	/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA02_300_ValidWithExtraneousTags.xml
+LOG:	2016-12-04 23:24:45	Aries file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Aries.txt
+LOG:	2016-12-04 23:24:45	Star file:/Users/apple/Documents/project/softwareprocess/SoftwareProcess/navigation/test/CA03_Valid_Stars.txt
