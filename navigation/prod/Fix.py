@@ -484,7 +484,7 @@ class Fix(object):
                             filedate_month =date_list2[0]
                             date1 = date_month+date_day  
                             date2 = filedate_month+filedate_day
-                            if int(date_month)==int(filedate_month)and int(date_day)>= int(filedate_day) and a ==0:
+                            if int(date_month)==int(filedate_month)and int(date_day)<= int(filedate_day) and a ==0:
                                 starFile_data = {'body': starFilelist[0]+' '+starFilelist[1], 
                                  'date': starFilelist[2],
                                  'longtitude': starFilelist[3],
